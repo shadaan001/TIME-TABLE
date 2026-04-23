@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Login, type UserRole } from "@/components/login"
 import { Dashboard } from "@/components/dashboard"
 import { TeacherDashboard } from "@/components/teacher-dashboard"
-import { AdminDashboard } from "@/components/admin-dashboard"
+import AdminDashboard from "@/components/admin-dashboard"
 
 interface UserSession {
   name: string

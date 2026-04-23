@@ -1,5 +1,5 @@
 "use client"
-
+import { supabase } from "@/lib/supabase"
 import { useState } from "react"
 import { User, GraduationCap, LogIn, Lock, UserCog, BookOpen, Shield } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -46,7 +46,38 @@ export function Login({ onLogin }: LoginProps) {
 
     setIsLoading(true)
 
-    await new Promise(resolve => setTimeout(resolve, 500))
+    const { data, error } = await supabase
+  .from("users")
+  .select("*")
+  .eq("name", name.trim())
+  .single()
+
+if (error || !data) {
+  alert("User not found ❌")
+  setIsLoading(false)
+  return
+}
+
+if (data.password !== password) {
+  alert("Wrong password ❌")
+  setIsLoading(false)
+  return
+}
+
+if (data.role !== selectedRole) {
+  alert("Wrong role ❌")
+  setIsLoading(false)
+  return
+}
+
+onLogin(
+  data.name,
+  data.role === "student" ? data.class_name : null,
+  data.role,
+  password
+)
+
+setIsLoading(false)
 
     // ✅ FIXED TYPE SAFE CALL
     onLogin(
