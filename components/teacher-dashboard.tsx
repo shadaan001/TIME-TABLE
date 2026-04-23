@@ -20,7 +20,14 @@ interface Row {
 }
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-const timeSlots = ["6:00-7:00", "7:00-8:00"]
+const timeSlots = [
+  "4:00-5:00",
+  "5:00-6:00",
+  "5:30-6:30", 
+  "6:00-7:00",
+  "7:00-8:00",
+  "8:00-9:00"
+]
 
 export function TeacherDashboard({ teacherName, onLogout }: TeacherDashboardProps) {
   const [selectedClass, setSelectedClass] = useState("Class 6")
