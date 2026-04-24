@@ -73,22 +73,16 @@ export function TeacherDashboard({ teacherName, onLogout }: TeacherDashboardProp
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16 sm:h-20">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 glow-purple">
-                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
-                </div>
+               <img
+  src="/logoo.png"
+  alt="NAS Coaching"
+  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover"
+/>
                 <div>
-                  <h1 className="text-lg sm:text-xl font-bold gradient-text">Teacher Dashboard</h1>
+                  <h1 className="text-lg sm:text-xl font-bold gradient-text">NAS Timetable</h1>
                   <p className="text-xs text-muted-foreground hidden sm:block">View all class schedules</p>
                 </div>
               </div>
-
-              <button
-                onClick={onLogout}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 bg-secondary/50 text-foreground/80 border border-border hover:bg-destructive/20 hover:text-destructive hover:border-destructive/50"
-              >
-                <LogOut className="w-4 h-4" />
-                Logout
-              </button>
             </div>
           </div>
         </header>
@@ -96,20 +90,14 @@ export function TeacherDashboard({ teacherName, onLogout }: TeacherDashboardProp
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
           {/* Welcome */}
-          <div className="glass-card rounded-2xl p-6 mb-6 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-primary/30">
-                <User className="w-7 h-7 text-primary" />
-              </div>
+          <div className="glass-card rounded-2xl p-6 mb-6 flex justify-center items-center">
+            <div className="flex justify-center items-center">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground text-center"></h2>
               <div>
-                <p className="text-sm text-muted-foreground">Welcome,</p>
-                <h2 className="text-xl sm:text-2xl font-bold text-foreground">{teacherName}</h2>
+               <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+  NAS Timetable
+</h2>
               </div>
-            </div>
-
-            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600/20 to-pink-500/20 border border-primary/30">
-              <GraduationCap className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Teacher</span>
             </div>
           </div>
 
